@@ -1,0 +1,9 @@
+SapthaPlus/
+├── index.html         (Home Page)
+├── about.html         (About Us Page)
+├── teachers.html      (Teachers Page)
+├── classes.html       (Classes Page)
+├── contact.html       (Contact Page)
+├── assets/
+│   ├── style.css      (Single CSS File)
+│   └── script.js      (Single JavaScript File)

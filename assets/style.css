@@ -1,0 +1,258 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    background: #f8f9fa;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header.hero {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin: 10px 0 20px;
+    animation: slideIn 2s ease-out;
+}
+
+.cta-btn {
+    background: #ff6f61;
+    color: #fff;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 5px 15px rgba(255, 111, 97, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+    background: #e14e41;
+    transform: scale(1.1);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: #1a1a2e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1.5s ease-in-out;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav a:hover, nav a.active {
+    background: #ff6f61;
+}
+
+/* Sections */
+.container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container h2 {
+    color: #6a11cb;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.features, .teachers-boxes, .classes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Cards */
+.feature, .teacher-card, .class-item {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.4s;
+    width: 300px;
+    position: relative;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.feature:hover, .teacher-card:hover, .class-item:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.feature img, .teacher-card img {
+    width: 80px;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.teacher-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.feature:hover img, .teacher-card:hover img {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.feature h3, .teacher-card h3, .class-item h3 {
+    color: #2575fc;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+button, .contact-form button, .cta-btn {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff6f61, #e14e41);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover, .contact-form button:hover, .cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.get-in-touch {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 600px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.get-in-touch h2 {
+    color: #222;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.get-in-touch h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.get-in-touch a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.get-in-touch a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+.get-in-touch p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+footer {
+            text-align: center;
+            padding: 15px;
+            background: #007bff;
+            color: white;
+            margin-top: 20px;
+        }
