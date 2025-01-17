@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teachers - Saptha Plus Higher Education Center</title>
+    <title>Teachers - Saptha Plus</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -19,27 +19,59 @@
     <section class="container">
         <h2>Meet Our Teachers</h2>
         <div class="teachers-boxes">
+
             <div class="teacher-card">
                 <img src="assets/teacher1.jpg" alt="Teacher 1">
-                <h3>John Doe</h3>
-                <p>Mathematics Expert with over 10 years of teaching experience.</p>
+                <h3>Mangala Thennakoon</h3>
+                <p> <strong> B. Sc. </strong> <br> Science Expert with over 10 years of teaching experience.</p>
+                <div class="collapsible-container">
+                    <button class="collapsible">Click Me!</button>
+                    <div class="content">
+                      <p>Science Expert with over 10 years of teaching experience.</p>
+                      <img src="assets/images/Interactive Classes.jpg" alt="Feature 2">
+                    </div>
+                  </div>
             </div>
+
             <div class="teacher-card">
                 <img src="assets/teacher2.jpg" alt="Teacher 2">
                 <h3>Jane Smith</h3>
                 <p>Physics Guru passionate about making science fun.</p>
+                <button class="collapsible">Click Me!</button>
+                    <div class="content">
+                      <p>This is a responsive collapsible content box. Add more content here as needed.</p>
+                      <p>It smoothly expands and collapses when you click the button above!</p>
+                    </div>
             </div>
+
             <div class="teacher-card">
                 <img src="assets/teacher3.jpg" alt="Teacher 3">
                 <h3>Mark Lee</h3>
                 <p>English Literature specialist with a love for classic novels.</p>
+                <button class="collapsible">Click Me!</button>
+                    <div class="content">
+                      <p>This is a responsive collapsible content box. Add more content here as needed.</p>
+                      <p>It smoothly expands and collapses when you click the button above!</p>
+                    </div>
             </div>
+
         </div>
     </section>
 
 <footer>
-    <p>&copy; 2025 Saptha Plus Higher Education Center. All Rights Reserved. Developed by <a href="https://gimhantechnologies.com" target="_blank" style="color: black;">Gimhan Technologies</a></p>
+    <p>&copy; 2025 Saptha Plus. All Rights Reserved. | Developed by Gimhan Technologies</p>
 </footer>
+
+<script>
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        content.classList.toggle('expanded');
+      });
+    });
+  </script>
 
 </body>
 </html>
