@@ -249,6 +249,61 @@ button:hover, .contact-form button:hover, .cta-btn:hover {
     color: #555;
 }
 
+.collapsible-container {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  button.collapsible {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+
+  button.collapsible:hover {
+    background-color: #0056b3;
+  }
+
+  button.collapsible:after {
+    content: '\25BC'; /* Down arrow */
+    font-size: 12px;
+    float: right;
+    transition: transform 0.3s ease;
+  }
+
+  button.collapsible.active:after {
+    transform: rotate(180deg); /* Rotate to up arrow */
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 0 0 5px 5px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 15px;
+  }
+
+  .content p {
+    margin: 15px 0;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  button.collapsible + .content.expanded {
+    max-height: 300px; /* Adjust based on content height */
+    padding: 15px;
+  }
+
 footer {
             text-align: center;
             padding: 15px;
