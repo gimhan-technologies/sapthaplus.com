@@ -4,74 +4,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teachers - Saptha Plus</title>
+    <link rel="icon" href="assets/images/sapthaplus.jpg" type="image/jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            background: linear-gradient(90deg, #4a90e2, #007bff);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        header {
+            padding-top: 6rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        .teacher-section {
+            margin-bottom: 4rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .teacher-profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem;
+            background: #f8f9fa;
+        }
+
+        .teacher-profile img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .teacher-info {
+            flex: 1;
+        }
+
+        .teacher-info h2 {
+            color: #333;
+            margin-bottom: 0.8rem;
+        }
+
+        .teacher-info .credentials {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-tag {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 0.4rem 0.3rem 0.4rem 0;
+            transition: transform 0.3s;
+        }
+
+        .expertise-tag:hover {
+            transform: scale(1.1);
+        }
+
+        .teacher-classes {
+            padding: 1.5rem 2rem;
+            background: #f0f0f0;
+        }
+
+        .teacher-classes h3 {
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .class-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .class-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .class-card h4 {
+            color: #007bff;
+            margin-bottom: 0.6rem;
+        }
+
+        .schedule-tag {
+            background: #007bff;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-top: 0.6rem;
+            display: inline-block;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .teacher-profile {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <center><h1>Our Teachers</h1></center>
-    </header>
     <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="teachers.html">Teachers</a>
-            <a href="classes.html">Classes</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    <section class="container">
-        <h2>Meet Our Teachers</h2>
-        <div class="teachers-boxes">
+        <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="index.html#teachers"><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+        <a href="index.html#classes"><i class="fas fa-book"></i> Classes</a>
+        <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
 
-            <div class="teacher-card">
-                <img src="assets/teacher1.jpg" alt="Teacher 1">
-                <h3>Mangala Thennakoon</h3>
-                <p> <strong> B. Sc. </strong> <br> Science Expert with over 10 years of teaching experience.</p>
-                <div class="collapsible-container">
-                    <button class="collapsible">Click Me!</button>
-                    <div class="content">
-                      <p>Science Expert with over 10 years of teaching experience.</p>
-                      <img src="assets/images/Interactive Classes.jpg" alt="Feature 2">
+    <header>
+        <h1>Our Teachers & Classes</h1>
+    </header>
+
+    <div class="container">
+
+        <div class="teacher-section">
+            <div class="teacher-profile">
+                <img src="assets/teacher1.jpg" alt="Mangala Thennakoon">
+                <div class="teacher-info">
+                    <h2>Mangala Thennakoon</h2>
+                    <p class="credentials">B.Sc. in Physics | 10+ Years Experience</p>
+                    <div class="expertise">
+                        <span class="expertise-tag">Advanced Physics</span>
+                        <span class="expertise-tag">Mathematics</span>
+                        <span class="expertise-tag">Problem Solving</span>
                     </div>
-                  </div>
+                    <p class="bio">An experienced educator passionate about making complex physics concepts accessible to students. Specializes in preparing students for advanced examinations with a proven track record of student success.</p>
+                </div>
             </div>
-
-            <div class="teacher-card">
-                <img src="assets/teacher2.jpg" alt="Teacher 2">
-                <h3>Jane Smith</h3>
-                <p>Physics Guru passionate about making science fun.</p>
-                <button class="collapsible">Click Me!</button>
-                    <div class="content">
-                      <p>This is a responsive collapsible content box. Add more content here as needed.</p>
-                      <p>It smoothly expands and collapses when you click the button above!</p>
+            <div class="teacher-classes">
+                <h3>Classes by Mangala Thennakoon</h3>
+                <div class="class-grid">
+                    <div class="class-card">
+                        <h4>Advanced Physics</h4>
+                        <p>Comprehensive coverage of mechanics, waves, and thermodynamics.</p>
+                        <span class="schedule-tag">Mon, Wed, Fri - 4:00 PM</span>
                     </div>
-            </div>
-
-            <div class="teacher-card">
-                <img src="assets/teacher3.jpg" alt="Teacher 3">
-                <h3>Mark Lee</h3>
-                <p>English Literature specialist with a love for classic novels.</p>
-                <button class="collapsible">Click Me!</button>
-                    <div class="content">
-                      <p>This is a responsive collapsible content box. Add more content here as needed.</p>
-                      <p>It smoothly expands and collapses when you click the button above!</p>
+                    <div class="class-card">
+                        <h4>Physics Problem Solving</h4>
+                        <p>Focused sessions on solving complex physics problems.</p>
+                        <span class="schedule-tag">Tue, Thu - 5:00 PM</span>
                     </div>
+                    <div class="class-card">
+                        <h4>Physics for Competitions</h4>
+                        <p>Special preparation for physics olympiads and competitions.</p>
+                        <span class="schedule-tag">Sat - 9:00 AM</span>
+                    </div>
+                </div>
             </div>
-
         </div>
-    </section>
+    </div>
 
-<footer>
-    <p>&copy; 2025 Saptha Plus. All Rights Reserved. | Developed by Gimhan Technologies</p>
+
+    <div class="container">
+        <div class="teacher-section">
+            <div class="teacher-profile">
+                <img src="assets/teacher2.jpg" alt="Anuradha Thennakoon">
+                <div class="teacher-info">
+                    <h2>Anuradha Thennakoon</h2>
+                    <p class="credentials">B.Sc. in Physics | 10+ Years Experience</p>
+                    <div class="expertise">
+                        <span class="expertise-tag">Advanced Physics</span>
+                        <span class="expertise-tag">Mathematics</span>
+                        <span class="expertise-tag">Problem Solving</span>
+                    </div>
+                    <p class="bio">An experienced educator passionate about making complex physics concepts accessible to students. Specializes in preparing students for advanced examinations with a proven track record of student success.</p>
+                </div>
+            </div>
+            <div class="teacher-classes">
+                <h3>Classes by Anuradha Thennakoon</h3>
+                <div class="class-grid">
+                    <div class="class-card">
+                        <h4>Advanced Physics</h4>
+                        <p>Comprehensive coverage of mechanics, waves, and thermodynamics.</p>
+                        <span class="schedule-tag">Mon, Wed, Fri - 4:00 PM</span>
+                    </div>
+                    <div class="class-card">
+                        <h4>Physics Problem Solving</h4>
+                        <p>Focused sessions on solving complex physics problems.</p>
+                        <span class="schedule-tag">Tue, Thu - 5:00 PM</span>
+                    </div>
+                    <div class="class-card">
+                        <h4>Physics for Competitions</h4>
+                        <p>Special preparation for physics olympiads and competitions.</p>
+                        <span class="schedule-tag">Sat - 9:00 AM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2025 Saptha Plus. All Rights Reserved. | Developed by Gimhan Technologies</p>
 </footer>
-
-<script>
-    const collapsibles = document.querySelectorAll('.collapsible');
-    collapsibles.forEach(button => {
-      button.addEventListener('click', () => {
-        button.classList.toggle('active');
-        const content = button.nextElementSibling;
-        content.classList.toggle('expanded');
-      });
-    });
-  </script>
-
 </body>
 </html>
